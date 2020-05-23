@@ -30,6 +30,21 @@ If you have tested it with a different version or different distro, feel free to
 ## Instructions for Ubuntu:
 
 1. __Make sure you have an updated backup of your system and that it can go into maintenance if necessary__.
+2. Install NodeJS and NPM
+```bash
+sudo apt update
+sudo apt upgrade
+cd ~
+sudo sudo apt install curl dirmngr apt-transport-https lsb-release ca-certificates
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt install nodejs
+sudo apt install gcc g++ make
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn
+sudo npm install ghost-cli@latest -g
+```
 2. Install Docker and Docker-compose
 ```bash
 sudo apt update
