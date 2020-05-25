@@ -24,14 +24,6 @@ server {
         proxy_set_header Host $http_host;
         proxy_set_header X-Forwarded-Proto https; 
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        
-        location ~* ^.+\.(%proxy_extentions%)$ {
-            root           %home%/%user%/web/%domain%/ghost/content/;
-            access_log     /var/log/%web_system%/domains/%domain%.log combined;
-            access_log     /var/log/%web_system%/domains/%domain%.bytes bytes;
-            expires        max;
-            try_files      $uri @fallback;
-        }
     }
 
     location /error/ {
